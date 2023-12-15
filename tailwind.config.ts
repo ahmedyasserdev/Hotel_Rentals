@@ -8,10 +8,23 @@ const config: Config = {
   ],
   theme: {
     extend: {
+
+      colors : {
+        primary  : {
+          1 : "#5B656F",
+          2 : "#8998A6" ,
+          3 : "#DFE3E7",
+        },
+        secondary : {
+          1 : "#AB9C85" ,
+          2 : "#F5E9D6" ,
+          3 : "#F5F3F1"
+        },
+        dark : "#181D24"
+      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+          home_hero_desktop : "url(/hero-desktop.svg)",
+          home_hero_mobile   : "url('/hero-mobile.svg')",
       },
     },
   },
