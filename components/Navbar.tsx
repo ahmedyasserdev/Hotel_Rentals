@@ -42,7 +42,7 @@ const Navbar = () => {
 
         <Image
           className="lg:hidden inline-block cursor-pointer "
-          src={`/menu.svg`}
+          src={isOpen ? "/close.svg" : "/menu.svg"}
           alt="menu"
           width={32}
           height={32}

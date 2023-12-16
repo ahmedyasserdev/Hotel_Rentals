@@ -27,6 +27,13 @@ const config: Config = {
         home_hero_desktop: "url(/hero-desktop.svg)",
         home_hero_mobile: "url('/hero-mobile.svg')",
       },
+      screens : {
+        sm : '567px' ,
+        md : "768px" ,
+        lg  : "992px" ,
+        xl : "1200px" ,
+        "2xl" : "1400px" ,
+      },
     },
   },
   plugins: [],
