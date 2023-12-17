@@ -34,7 +34,7 @@ const Card = ({
   price,
 }: CardProps) => {
   const cardContent = (
-    <div className="min-w-[350px] bg-white pb-8 rounded-br-[40px] overflow-hidden">
+    <div className="w-[350px] max-w-[500px] bg-white pb-8 rounded-br-[40px] overflow-hidden">
       <div className="w-full relative">
         <Image
           src={image}

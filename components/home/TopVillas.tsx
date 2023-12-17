@@ -6,8 +6,8 @@ const TopVillas = () => {
     <section className="section__padding">
       <div className="container">
         <div className=" flex-center flex-col gap-10  text-dark  ">
-          <h1 className="bold-60">Top pick villas</h1>
-          <p className="regular-16 text-center lg:max-w-[80%] mx-auto block">
+          <h1 className=" bold-40 lg:bold-60">Top pick villas</h1>
+          <p className="regular-16 text-start  md:text-center lg:max-w-[80%] mx-auto block">
             Curabitur efficitur ante vel mi bibendum, et maximus nisl ultricies.
             Morbi nec tempus dui, sit amet facilisis nisl. Ut vel urna quis urna
             tristique tempus. Etiam lobortis est at mauris eleifend, id tempor
@@ -15,7 +15,7 @@ const TopVillas = () => {
           </p>
         </div>
 
-        <div className="flex gap-4 items-center max-lg:flex-wrap  pt-20 ">
+        <div className=" grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  gap-3   pt-20 ">
           {TOP_VILLAS.map(
             ({
               id,

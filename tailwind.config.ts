@@ -26,6 +26,8 @@ const config: Config = {
       backgroundImage: {
         home_hero_desktop: "url(/hero-desktop.svg)",
         home_hero_mobile: "url('/hero-mobile.svg')",
+        home_region_1: "url('/region-1.svg')",
+        home_region_2: "url('/region-2.svg')",
       },
       screens : {
         sm : '567px' ,

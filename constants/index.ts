@@ -43,3 +43,37 @@ export const TOP_VILLAS = [
     bathroom: 460,
   },
 ];
+
+
+
+export const  OUR_PROPERTIES = [
+  {
+    icon : "/wave.svg",
+    title : "Seafront",
+    desc : "have a look",
+    
+  },
+  {
+    icon : "/paw.svg",
+    title : "Pet friendly",
+    desc : "pets allowed",
+
+  },
+  {
+    icon : "/electric-car.svg",
+    title : "Electric car",
+    desc : "charge your car",
+
+  },
+  {
+    icon : "/gym.svg",
+    title : "Fitness/Gym",
+    desc : "work out",
+
+  },
+  {
+    icon : "/mooring.svg",
+    title : "Boat mooring" ,
+    desc : "take a trip",
+  },
+]

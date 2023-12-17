@@ -23,3 +23,12 @@ export type IconTextProps = {
 export type PriceBoxProps = {
     price : number
   }
+
+
+  export type ButtonProps = {
+    type: "button" | "submit";
+    title: string;
+    icon?: string;
+    variant: string;
+    full?: boolean;
+  };

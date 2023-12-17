@@ -27,7 +27,7 @@ p {
     @apply bg-primary-2 rouned-lg rounded-t-none text-white;
   }
   .btn_light {
-    @apply border-[1.4px] border-primary-2  text-primary-1 bg-white rouned-lg rounded-t-none;
+    @apply border-[1.4px] border-primary-2 text-primary-1 bg-white rounded-lg rounded-t-none;
   }
   /* .btn_dark_green {
     @apply bg-green-90 px-8 py-4 text-white transition-all hover:bg-black;
@@ -55,8 +55,12 @@ p {
     @apply flex items-center justify-end;
   }
 
+  /* fonts */
   .regular-64 {
     @apply text-[64px] font-[400] leading-[120%];
+  }
+  .regular-60 {
+    @apply text-[60px] font-[400] leading-[120%];
   }
 
   .regular-40 {
@@ -141,28 +145,25 @@ p {
   .section__padding {
     @apply py-[70px] lg:py-[150px];
   }
- 
 
   .scale-animation {
     @apply hover:scale-125 transition-all duration-700;
   }
-  
-
 }
 
 @layer components {
   .home__hero {
     @apply bg-home_hero_mobile lg:bg-home_hero_desktop bg-cover bg-center bg-no-repeat rounded-br-[150px];
   }
- .card__image {
-  @apply w-full rounded-br-[30px] object-contain scale-animation
- }
+  .card__image {
+    @apply w-full rounded-br-[30px] object-contain scale-animation;
+  }
 
- .price__box {
-  @apply absolute top-[25px] left-[28px]
- }
+  .price__box {
+    @apply absolute top-[25px] left-[28px];
+  }
 
- .price__content {
-  @apply bg-secondary-2 border-b-4 border-[#918675] p-2 rounded-[4px] rounded-br-[30px]
- }
+  .price__content {
+    @apply bg-secondary-2 border-b-4 border-[#918675] p-2 rounded-[4px] rounded-br-[30px];
+  }
 }
