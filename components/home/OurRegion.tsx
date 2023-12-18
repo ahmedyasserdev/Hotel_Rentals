@@ -12,6 +12,7 @@ const OurRegion = () => {
         </div>
 
         <div className=" flex-center gap-3 max-lg:flex-wrap">
+          
           <div className="bg-home_region_1 bg-center bg-cover bg-no-repeat lg:w-1/2 rounded-tr-[50px] rounded-bl-[50px] min-h-[400px] flex flex-col justify-end">
             <div className="flex items-start text-white p-5 flex-col  ">
               <h1 className="bold-60">Mountains</h1>

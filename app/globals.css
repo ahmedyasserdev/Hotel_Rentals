@@ -21,13 +21,13 @@ p {
 
 @layer utilities {
   .btn_primary {
-    @apply bg-primary-1 rouned-lg rounded-t-none text-white;
+    @apply bg-primary-1 rounded-lg rounded-tl-none text-white;
   }
   .btn_primary_light {
-    @apply bg-primary-2 rouned-lg rounded-t-none text-white;
+    @apply bg-primary-2 rounded-lg rounded-tl-none text-white;
   }
   .btn_light {
-    @apply border-[1.4px] border-primary-2 text-primary-1 bg-white rounded-lg rounded-t-none;
+    @apply border-[1.4px] border-primary-2 text-primary-1 bg-white rounded-lg rounded-tl-none;
   }
   /* .btn_dark_green {
     @apply bg-green-90 px-8 py-4 text-white transition-all hover:bg-black;
@@ -155,6 +155,9 @@ p {
   .home__hero {
     @apply bg-home_hero_mobile lg:bg-home_hero_desktop bg-cover bg-center bg-no-repeat rounded-br-[150px];
   }
+  .vase {
+    @apply bg-vase_mobile lg:bg-vase_desktop bg-cover bg-center bg-no-repeat rounded-br-[150px];
+  }
   .card__image {
     @apply w-full rounded-br-[30px] object-contain scale-animation;
   }
@@ -165,5 +168,21 @@ p {
 
   .price__content {
     @apply bg-secondary-2 border-b-4 border-[#918675] p-2 rounded-[4px] rounded-br-[30px];
+  }
+  .about {
+    @apply bg-about_1_mobile
+      md:bg-about_1
+      bg-right
+      md:bg-center
+      bg-contain
+      bg-no-repeat
+      rounded-md
+      max-lg:mt-6
+      rounded-tr-[60px]
+      h-[300px]
+      md:h-[500px]
+      w-full
+      lg:w-1/2
+      overflow-visible;
   }
 }

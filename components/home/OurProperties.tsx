@@ -36,7 +36,7 @@ const OurProperties = () => {
                 type="button"
                 icon={"/arrow-right.svg"}
                 title={desc}
-                variant="btn_light border-0 p-1.5"
+                variant="btn_light border-0 p-1.5 hover:animate-[moveRight_1s_ease-in-out_infinite] "
               />
             </div>
           ))}

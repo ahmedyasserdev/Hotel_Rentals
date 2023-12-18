@@ -77,3 +77,37 @@ export const  OUR_PROPERTIES = [
     desc : "take a trip",
   },
 ]
+
+
+
+export const FOOTER_TEXT = [
+  "Terms & Conditions",
+  "Privacy Notice and Cookies",
+  "Imprint",
+]
+
+
+export const FOOTER_MOBILE_TEXT = [
+  "termis", 
+  "privacy",
+  "contact",
+]
+
+export const FOOTER_ICONS = [
+  {
+    alt : "facebook" ,
+    icon : "/facebook.svg"
+  },
+  {
+    alt : "youtube" ,
+    icon : "/youtube.svg"
+  },
+  {
+    alt : "ball" ,
+    icon : "/ball.svg"
+  },
+  {
+    alt : "whats-up" ,
+    icon : "/whats-up.svg"
+  },
+]
