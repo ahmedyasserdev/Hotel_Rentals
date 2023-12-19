@@ -22,7 +22,7 @@ const config: Config = {
         dark: "#181D24",
         navBg: "rgba(3, 3, 3, 0.20)",
         gold: "#C9BDAB",
-        glass : "rgba(255, 255, 255, 0.88)"
+        glass : "rgba(255, 255, 255, 0.88)",
       },
       backgroundImage: {
         home_hero_desktop: "url(/hero-desktop.svg)",
@@ -36,6 +36,7 @@ const config: Config = {
         about_1_mobile : "url('/about-1-mobile.svg')",
         luxury_desktop : "url('/luxury-desktop.svg')",
         luxury_mobile : "url('/luxury-mobile.svg')",
+
       },
       screens : {
         sm : '567px' ,

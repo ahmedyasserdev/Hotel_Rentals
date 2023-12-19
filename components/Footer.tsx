@@ -1,8 +1,10 @@
 'use client'
 import { FOOTER_ICONS, FOOTER_MOBILE_TEXT, FOOTER_TEXT } from "@/constants";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import CustomFilter from "./CustomFilter";
 const Footer = () => {
+ 
   return (
     <footer className="pt-[100px] pb-[40px]  bg-primary-3  ">
       <div className="container flex-between gap-[30px] flex-col md:flex-row">
@@ -53,6 +55,11 @@ const Footer = () => {
 
 
         </div>
+
+
+                      
+
+
       </div>
     </footer>
   );

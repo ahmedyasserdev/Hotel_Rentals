@@ -29,7 +29,7 @@ const TopVillas = () => {
               width,
               bathroom,
             }) => (
-              <Card title={title}  guests = {guests}  bedroom={bedroom} bath = {bathroom} width = {width} key = {id} 
+              <Card title={title}  guests = {guests}  rooms={bedroom} bath = {bathroom} width = {width} key = {id} 
                 view = {view}
                 image = {image}
                 price = {price}

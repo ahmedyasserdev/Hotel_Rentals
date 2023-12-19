@@ -185,4 +185,40 @@ p {
       lg:w-1/2
       overflow-visible;
   }
+  .custom-filter__btn {
+    @apply relative  w-full min-w-[127px] flex justify-between items-center cursor-default rounded-lg bg-gold text-white font-bold py-2 px-3 text-left shadow-md sm:text-sm border;
+  }
+
+  .custom-filter__options {
+    @apply absolute  z-30 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 border-none outline-none ring-opacity-5 focus:outline-none sm:text-sm;
+  }
 }
+
+.bg_villas {
+  position: relative;
+}
+
+.bg_villas::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 53.73%),
+    linear-gradient(0deg, #fff 0%, rgba(255, 255, 255, 0) 64.5%),
+    url("/villas.svg"),
+    lightgray 138.914px -144.19px / 92.077% 124.026% no-repeat;
+  filter: blur(125px);
+  z-index: -1;
+}
+
+.custom-filter_container {
+  box-shadow:
+    0px 4.389px 8.313px 0px rgba(0, 0, 0, 0.02),
+    0px 14.742px 27.92px 0px rgba(0, 0, 0, 0.02),
+    0px 66px 125px 0px rgba(0, 0, 0, 0.04);
+}
+
+
