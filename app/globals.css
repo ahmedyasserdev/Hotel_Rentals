@@ -163,7 +163,7 @@ p {
   }
 
   .price__box {
-    @apply absolute top-[25px] left-[28px];
+    @apply absolute top-[25px] left-[28px] z-30 ;
   }
 
   .price__content {
@@ -194,11 +194,13 @@ p {
   }
 }
 
-.bg_villas {
+.bg_villas,
+.property {
   position: relative;
 }
 
-.bg_villas::before {
+.bg_villas::before,
+.property::before {
   content: "";
   position: absolute;
   top: 0;
@@ -221,4 +223,77 @@ p {
     0px 66px 125px 0px rgba(0, 0, 0, 0.04);
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+  color: #5B656F !important ;
+}
 
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.loader3D {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate 3s linear infinite;
+}
+
+.loader3D::before,
+.loader3D::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #5B656F ; 
+  border-radius: 15%;
+  animation: rotate 5s linear infinite;
+}
+
+.loader3D::before {
+  transform: rotateX(90deg);
+}
+
+.loader3D::after {
+  transform: rotateY(90deg);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+
+.swiper-slide:hover {
+  cursor: grab;
+}
+
+.swiper-slide:active {
+  cursor: grabbing;
+}

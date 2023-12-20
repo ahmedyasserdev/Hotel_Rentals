@@ -21,6 +21,7 @@ export type IconTextProps = {
 
 export type PriceBoxProps = {
   price: number;
+  paying : string;
 };
 
 export type ButtonProps = {
@@ -42,3 +43,6 @@ export type CustomFilterProps = {
   setFilterState: any;
 };
 
+export type ExternalIDType = {
+  params : {id : number} ;
+}

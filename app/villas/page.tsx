@@ -10,7 +10,7 @@ const Page = () => {
   const [minPrice, setMinPrice] = useState<number>(10000);
   const [maxPrice, setMaxPrice] = useState<number>(50000);
   const [rentFrequency, setRentFrequency] = useState<string>("monthly");
-  const [hitsPerPage, setHitsPerPage] = useState<number>(10);
+  const [hitsPerPage, setHitsPerPage] = useState<number>(9);
   const [categoryExternalID, setCategoryExternalID] = useState<number>(3);
   const url = `https://bayut.p.rapidapi.com/properties/list?locationExternalIDs=5002%2C6020&purpose=${
     purpose || "for-rent"
@@ -64,26 +64,24 @@ const Page = () => {
         </div>
 
         <div className=" 2xl:self-start grid grid-cols-1 md:grid-cols-2  2xl:grid-cols-3   2xl:gap-4 lg:gap-10 mt-12">
-          {isDataEmpty ? (
-            <div className="bold-40 text-center  ">
-              <h1>No Results Now </h1>
-            </div>
-          ) : (
-            data?.map((item, i) => (
-              <Card
-                key={i}
-                country={item.location[1].name}
-                title={item.title}
-                price={item.price}
-                image={item.coverPhoto?.url}
-                id={item.externalID}
-                bath={item?.baths}
-                rooms={item?.rooms}
-                width={item.area}
-              />
-            ))
-          )}
+          {data?.map((item, i) => (
+            <Card
+              key={i}
+              country={item.location[1].name}
+              title={item.title}
+              price={item.price}
+              image={item.coverPhoto?.url}
+              id={item.externalID}
+              bath={item?.baths}
+              rooms={item?.rooms}
+              width={item.area}
+            />
+          ))}
         </div>
+
+
+            {/* show more btn */}
+
       </div>
     </section>
   );

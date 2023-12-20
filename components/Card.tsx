@@ -1,16 +1,8 @@
-import { CardProps, IconTextProps, PriceBoxProps } from "@/types";
+import { CardProps, IconTextProps } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
+import PriceBox from "./PriceBox";
 
-const PriceBox = ({ price }: PriceBoxProps) => (
-  <div className="price__box">
-    <div className="price__content">
-      <p className="bold-18">
-        <span className="font-normal">From</span> €{price}/daily
-      </p>
-    </div>
-  </div>
-);
 
 const IconText = ({
   iconSrc,
@@ -50,12 +42,13 @@ const Card = ({
   const cardContent = (
     <div className="w-[350px] max-w-[450px] bg-white pb-8 rounded-br-[40px] overflow-hidden">
       <div className="w-full relative">
-        <img
+        <Image
           src={image}
           alt="card image"
           width={400}
           className="card__image"
           height={356}
+          priority
         />
         <PriceBox price={price} />
       </div>
@@ -117,7 +110,7 @@ const Card = ({
   );
 
   return id ? (
-    <Link href={`/property/${id}`} className="cursor-pointer">
+    <Link href={`/villas/${id}`} className="cursor-pointer">
       {cardContent}
     </Link>
   ) : (
