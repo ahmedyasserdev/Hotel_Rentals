@@ -11,24 +11,23 @@ import PriceBox from "@/components/PriceBox";
 import AmenitiesSection from "@/components/villa/AmenitiesSection";
 
 const Page = ({ params: { id } }: ExternalIDType) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<DataProps[]>([]);
 
-  const {
-    price ,
-    rentFrequency,
-    rooms,
-    title,
-    baths,
-    area,
-    description,
-    type,
-    purpose,
-    furnishingStatus,
-    amenities,
-    photos,
-    location,
-  } : DataProps = data;
-
+    const {
+      price,
+      rentFrequency,
+      rooms,
+      title,
+      baths,
+      area,
+      description,
+      type,
+      purpose,
+      furnishingStatus,
+      amenities,
+      photos,
+      location,
+    } = data[0];
   const propertyData = [
     { label: "Baths", value: baths },
     {
