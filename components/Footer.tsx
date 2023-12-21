@@ -35,15 +35,15 @@ const Footer = () => {
           <p className="regulary-16">info@luxuryrentals.com</p>
 
           <div className="flex items-center  gap-4 pt-3 ">
-            {FOOTER_ICONS.map(({ alt, icon }) => (
-              <Image  className="cursor-pointer" src={icon} alt={alt} width={26} height={20} />
+            {FOOTER_ICONS.map(({ alt, icon } , index ) => (
+              <Image   key = {index} className="cursor-pointer" src={icon} alt={alt} width={26} height={20} />
             ))}
           </div>
 
 
                   <div className="flex gap-4 md:hidden">
                     {FOOTER_MOBILE_TEXT.map((item , index) => (
-                       <p className=" regular-16 capitalize pt-4 cursor-pointer " key={index}>
+                       <p  className=" regular-16 capitalize pt-4 cursor-pointer " key={index}>
                        {item}
                      </p>
                     ) )}

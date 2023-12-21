@@ -33,7 +33,6 @@ const Page = () => {
 
   useEffect(() => {
     fetchData();
-    console.log(data);
   }, [
     purpose,
     minPrice,
@@ -84,6 +83,7 @@ const Page = () => {
                   rooms={item?.rooms}
                   width={item.area}
                   paying={item.rentFrequency}
+
                 />
               </Suspense>
             ))}
