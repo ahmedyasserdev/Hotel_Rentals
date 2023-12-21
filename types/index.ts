@@ -74,3 +74,5 @@ export type Amenity = {
 export type AmenitiesSectionProps = {
   amenities: Amenity[];
 };
+
+// https://luxury-rentals-j2re.vercel.app/

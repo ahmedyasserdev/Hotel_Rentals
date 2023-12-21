@@ -27,7 +27,7 @@ const Page = ({ params: { id } }: ExternalIDType) => {
       amenities,
       photos,
       location,
-    } = data[0];
+    } = data;
   const propertyData = [
     { label: "Baths", value: baths },
     {
