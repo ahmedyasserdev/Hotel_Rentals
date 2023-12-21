@@ -14,7 +14,7 @@ export type CardProps = {
 export type IconTextProps = {
   iconSrc: string;
   iconAlt: string;
-  value: number;
+  value: number | string ;
   unit: string;
   pluralUnit: string;
 };
