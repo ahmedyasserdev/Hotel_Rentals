@@ -1,8 +1,13 @@
 import { Disclosure } from "@headlessui/react";
 import Image from "next/image";
 
+type Amenity = {
+  text: string;
+  amenities?: { text: string }[];
+};
+
 type AmenitiesSectionProps = {
-  amenities: {}[];
+  amenities: Amenity[];
 };
 
 const AmenitiesSection = ({ amenities }: AmenitiesSectionProps) => {
