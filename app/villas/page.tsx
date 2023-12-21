@@ -5,6 +5,7 @@ import CustomFilter from "@/components/CustomFilter";
 import { PORPUSE, PAYING, MIN_PIRCE, MAX_PRICE, TYPES } from "@/constants";
 import Card from "@/components/Card";
 import Button from "@/components/Button";
+import { DataProps } from "@/types";
 const Page = () => {
   const [data, setData] = useState<{}[]>([]);
   const [purpose, setPurpose] = useState<string>("for-rent");
@@ -65,7 +66,7 @@ const Page = () => {
           </h2>
         ) : (
           <div className=" 2xl:self-start grid grid-cols-1 md:grid-cols-2  2xl:grid-cols-3   2xl:gap-4 lg:gap-10 mt-12">
-            {data?.map((item, i) => (
+            {data?.map((item  : DataProps, i : number )    => (
               <Suspense key={i} fallback={"loading..."}>
                 <Card
                   country={item.location[1]?.name}
