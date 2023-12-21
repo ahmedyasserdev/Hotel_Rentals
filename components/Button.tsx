@@ -3,13 +3,14 @@ import Image from "next/image";
 
 
 
-const Button = ({ type, title, icon, variant, full }: ButtonProps) => {
+const Button = ({ type, title, icon, variant, full ,  handlClick}: ButtonProps) => {
   return (
     <button
       type={type}
       className={`flex-center gap-2   ${variant} ${
         full && "w-full"
       } `}
+      onClick = {handlClick}
     >
       
       <p className=" whitespace-nowrap cursor-pointer">

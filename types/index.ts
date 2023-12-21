@@ -9,6 +9,7 @@ export type CardProps = {
   country: string;
   view?: string;
   price: number;
+  paying: number;
 };
 
 export type IconTextProps = {
@@ -21,7 +22,7 @@ export type IconTextProps = {
 
 export type PriceBoxProps = {
   price: number;
-  paying : string;
+  paying: string;
 };
 
 export type ButtonProps = {
@@ -30,6 +31,7 @@ export type ButtonProps = {
   icon?: string;
   variant: string;
   full?: boolean;
+  handlClick?: () => void;
 };
 
 export type OptionProps = {
@@ -44,5 +46,21 @@ export type CustomFilterProps = {
 };
 
 export type ExternalIDType = {
-  params : {id : number} ;
-}
+  params: { id: number };
+};
+
+export type DataProps = {
+  price: number;
+  rentFrequency: string;
+  rooms: number;
+  title: string;
+  baths: number;
+  area: number;
+  description: string;
+  type: string;
+  purpose: string;
+  furnishingStatus: string;
+  amenities: { text: string; amenities: {} }[];
+  photos: { url: string }[];
+  location: { name: string }[];
+};

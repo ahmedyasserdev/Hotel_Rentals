@@ -10,7 +10,7 @@ const AmenitiesSection = ({ amenities }: AmenitiesSectionProps) => {
     <div>
       {/* Desktop View */}
       <div className="lg:block hidden">
-        <h2 className="bold-32 mb-3">Amenities:</h2>
+        <h2 className="bold-32 mb-3">Amenities</h2>
         {amenities?.map((amenitie, index) => (
           <div className="flex items-center gap-3 my-3" key={index}>
             <div className="mr-2">

@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="z-30  absolute top-0 left-0 w-full bg-navBg">
+    <header className="z-[999999]  absolute top-0 left-0 w-full bg-navBg">
       <nav className=" relative z-30 flex-between container py-5 ">
         <Link
           href="/"

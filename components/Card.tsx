@@ -31,6 +31,7 @@ const Card = ({
   country,
   view,
   price,
+  paying, 
 }: CardProps) => {
   const getFirstThreeWords = (title: string) => {
     const words = title.split(" ");
@@ -50,7 +51,7 @@ const Card = ({
           height={356}
           priority
         />
-        <PriceBox price={price} />
+        <PriceBox price={price} paying = {paying} />
       </div>
 
       <div className="px-3">
