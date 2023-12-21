@@ -33,14 +33,7 @@ const Page = () => {
 
   useEffect(() => {
     fetchData();
-  }, [
-    purpose,
-    minPrice,
-    maxPrice,
-    rentFrequency,
-    hitsPerPage,
-    categoryExternalID,
-  ]);
+  }, [purpose,minPrice,maxPrice, rentFrequency, hitsPerPage, categoryExternalID,]);
 
   return (
     <section className="section__padding bg_villas ">

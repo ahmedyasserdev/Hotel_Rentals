@@ -11,7 +11,7 @@ import PriceBox from "@/components/PriceBox";
 import AmenitiesSection from "@/components/villa/AmenitiesSection";
 
 const Page = ({ params: { id } }: ExternalIDType) => {
-  const [data, setData] = useState<DataProps>([]);
+  const [data, setData] = useState([]);
 
   const {
     price,
