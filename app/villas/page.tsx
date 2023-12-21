@@ -35,6 +35,7 @@ const Page = () => {
     fetchData();
   }, [purpose,minPrice,maxPrice, rentFrequency, hitsPerPage, categoryExternalID,]);
 
+  
   return (
     <section className="section__padding bg_villas ">
       <div className="container flex-center   flex-col gap-4 relative z-30 mt-5">
@@ -67,7 +68,7 @@ const Page = () => {
             {data?.map((item, i) => (
               <Suspense key={i} fallback={"loading..."}>
                 <Card
-                  country={item.location[1].name}
+                  country={item.location[1]?.name}
                   title={item.title}
                   price={item.price}
                   image={item.coverPhoto?.url}
