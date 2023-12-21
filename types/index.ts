@@ -47,6 +47,7 @@ export type CustomFilterProps = {
 export type ExternalIDType = {
   params: { id: number };
 };
+// Update your types
 export type DataProps = {
   price: number;
   rentFrequency: string;
@@ -58,9 +59,18 @@ export type DataProps = {
   type: string;
   purpose: string;
   furnishingStatus: string;
-  amenities: {}[];
+  amenities: Amenity[]; // Change from {}[] to Amenity[]
   photos: { url: string }[]; 
   location: { name: string }[];
   coverPhoto?: { url: string }; 
   externalID?: number; 
+};
+
+export type Amenity = {
+  text: string;
+  amenities?: Amenity[];
+};
+
+export type AmenitiesSectionProps = {
+  amenities: Amenity[];
 };
