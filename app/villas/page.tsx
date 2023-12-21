@@ -7,7 +7,7 @@ import Card from "@/components/Card";
 import Button from "@/components/Button";
 import { DataProps } from "@/types";
 const Page = () => {
-  const [data, setData] = useState<{}[]>([]);
+  const [data, setData] = useState<DataProps[]>([]);
   const [purpose, setPurpose] = useState<string>("for-rent");
   const [minPrice, setMinPrice] = useState<number>(10000);
   const [maxPrice, setMaxPrice] = useState<number>(50000);
@@ -66,7 +66,7 @@ const Page = () => {
           </h2>
         ) : (
           <div className=" 2xl:self-start grid grid-cols-1 md:grid-cols-2  2xl:grid-cols-3   2xl:gap-4 lg:gap-10 mt-12">
-            {data?.map((item  : DataProps, i : number )    => (
+            {data?.map((item  , i : number )    => (
               <Suspense key={i} fallback={"loading..."}>
                 <Card
                   country={item.location[1]?.name}
