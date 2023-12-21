@@ -62,11 +62,15 @@ const Page = ({ params: { id } }: ExternalIDType) => {
   ];
 
   const fetchDetails = async () => {
-    const url = `https://bayut.p.rapidapi.com/properties/detail?externalID=${id}`;
-    const response = await fetch(url, options);
-    const data = await response.json();
-    setData(data);
-    return data;
+    try {
+      const url = `https://bayut.p.rapidapi.com/properties/detail?externalID=${id}`;
+      const response = await fetch(url, options);
+      const data = await response.json();
+      setData(data);
+      return data;
+    } catch (error) {
+      console.error("Error fetching details:", error);
+    }
   };
 
   useEffect(() => {
