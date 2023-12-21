@@ -48,7 +48,6 @@ export type CustomFilterProps = {
 export type ExternalIDType = {
   params: { id: number };
 };
-
 export type DataProps = {
   price: number;
   rentFrequency: string;
@@ -60,7 +59,8 @@ export type DataProps = {
   type: string;
   purpose: string;
   furnishingStatus: string;
-  amenities: { text: string; amenities: {} }[];
-  photos: { url: string }[];
+  amenities: {}[];
+  photos: { url: string }[]; // Assuming photos is an array of objects with a 'url' property
   location: { name: string }[];
+  coverPhoto?: { url: string }; // Adding coverPhoto property as optional
 };
