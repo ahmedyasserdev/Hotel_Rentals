@@ -122,7 +122,7 @@ const Page = ({ params: { id } }: ExternalIDType) => {
 
         <div className="flex items-center lg:items-start flex-col gap-2">
           <h2 className="bold-32 lg:bold-52">
-            {Array.isArray(location) ? location[1].name : null}
+            {/* {Array.isArray(location) ? location[1].name : null} */}
           </h2>
           {propertyData.map((property, index) => (
             <p key={index} className="bold-18">
