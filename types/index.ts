@@ -1,6 +1,6 @@
 export type CardProps = {
   id?: number;
-  image: string;
+  image?: string; 
   guests?: number;
   rooms: number;
   width?: number;
@@ -9,9 +9,8 @@ export type CardProps = {
   country: string;
   view?: string;
   price: number;
-  paying: number;
+  paying: string;
 };
-
 export type IconTextProps = {
   iconSrc: string;
   iconAlt: string;
@@ -60,7 +59,8 @@ export type DataProps = {
   purpose: string;
   furnishingStatus: string;
   amenities: {}[];
-  photos: { url: string }[]; // Assuming photos is an array of objects with a 'url' property
+  photos: { url: string }[]; 
   location: { name: string }[];
-  coverPhoto?: { url: string }; // Adding coverPhoto property as optional
+  coverPhoto?: { url: string }; 
+  externalID?: number; 
 };
