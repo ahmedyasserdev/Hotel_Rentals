@@ -14,7 +14,7 @@ const Page = ({ params: { id } }: ExternalIDType) => {
   const [data, setData] = useState([]);
 
   const {
-    price,
+    price ,
     rentFrequency,
     rooms,
     title,
@@ -27,7 +27,7 @@ const Page = ({ params: { id } }: ExternalIDType) => {
     amenities,
     photos,
     location,
-  } = data;
+  } : DataProps = data;
 
   const propertyData = [
     { label: "Baths", value: baths },
