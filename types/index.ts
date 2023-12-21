@@ -9,12 +9,12 @@ export type CardProps = {
   country: string;
   view?: string;
   price: number;
-  paying: string;
+  paying?: string;
 };
 export type IconTextProps = {
   iconSrc: string;
   iconAlt: string;
-  value: number | string ;
+  value: number ;
   unit: string;
   pluralUnit: string;
 };

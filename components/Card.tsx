@@ -31,7 +31,7 @@ const Card = ({
   country,
   view,
   price,
-  paying, 
+  paying  = "daily" ,  
 }: CardProps) => {
   const getFirstThreeWords = (title: string) => {
     const words = title.split(" ");
@@ -82,7 +82,7 @@ const Card = ({
               <IconText
                 iconSrc="/blueprint.svg"
                 iconAlt="m2"
-                value={width.toFixed(0)}
+                value={Number(width.toFixed(0))}
                 unit="m2"
                 pluralUnit="m2"
               />
