@@ -59,7 +59,7 @@ export type DataProps = {
   type: string;
   purpose: string;
   furnishingStatus: string;
-  amenities: Amenity[]; // Change from {}[] to Amenity[]
+  amenities: Amenity[]; 
   photos: { url: string }[]; 
   location: { name: string }[];
   coverPhoto?: { url: string }; 
@@ -74,5 +74,3 @@ export type Amenity = {
 export type AmenitiesSectionProps = {
   amenities: Amenity[];
 };
-
-// https://luxury-rentals-j2re.vercel.app/

@@ -1,5 +1,4 @@
 import AboutUs from "@/components/AboutUs";
-import Luxury from "@/components/Luxury";
 import HomeHero from "@/components/home/HomeHero";
 import Host from "@/components/home/Host";
 import OurProperties from "@/components/home/OurProperties";
@@ -15,7 +14,6 @@ export default function Home() {
       <OurProperties />
       <Host/>
       <AboutUs />
-      <Luxury />
     </>
   );
 }

@@ -194,13 +194,12 @@ p {
   }
 }
 
-.bg_villas,
-.property {
+.page_bg {
   position: relative;
 }
 
-.bg_villas::before,
-.property::before {
+.page_bg::before
+ {
   content: "";
   position: absolute;
   top: 0;

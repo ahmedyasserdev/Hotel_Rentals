@@ -13,7 +13,7 @@ import AmenitiesSection from "@/components/villa/AmenitiesSection";
 const Page = ({ params: { id } }: ExternalIDType) => {
   const [data, setData] = useState<DataProps>({
     price: 0,
-    rentFrequency: "",
+    rentFrequency: "monthly",
     rooms: 0,
     title: "",
     baths: 0,
@@ -40,7 +40,6 @@ const Page = ({ params: { id } }: ExternalIDType) => {
     furnishingStatus,
     amenities,
     photos,
-    location,
   } = data;
   const propertyData = [
     { label: "Baths", value: baths },
@@ -78,7 +77,7 @@ const Page = ({ params: { id } }: ExternalIDType) => {
   }, [id]);
 
   return (
-    <section className="section__padding property">
+    <section className="section__padding page_bg">
       <div className="container">
         <div className="flex-between gap-[40px] md:gap-2 flex-col-reverse lg:flex-row">
           <div className="text-dark md:self-start text-center lg:text-start md:w-1/2">
@@ -121,9 +120,6 @@ const Page = ({ params: { id } }: ExternalIDType) => {
         </article>
 
         <div className="flex items-center lg:items-start flex-col gap-2">
-          <h2 className="bold-32 lg:bold-52">
-            {/* {Array.isArray(location) ? location[1].name : null} */}
-          </h2>
           {propertyData.map((property, index) => (
             <p key={index} className="bold-18">
               {property.label} :{" "}
@@ -145,3 +141,4 @@ const Page = ({ params: { id } }: ExternalIDType) => {
 };
 
 export default Page;
+

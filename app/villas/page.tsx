@@ -34,11 +34,17 @@ const Page = () => {
 
   useEffect(() => {
     fetchData();
-  }, [purpose,minPrice,maxPrice, rentFrequency, hitsPerPage, categoryExternalID,]);
+  }, [
+    purpose,
+    minPrice,
+    maxPrice,
+    rentFrequency,
+    hitsPerPage,
+    categoryExternalID,
+  ]);
 
-  
   return (
-    <section className="section__padding bg_villas ">
+    <section className="section__padding page_bg ">
       <div className="container flex-center   flex-col gap-4 relative z-30 mt-5">
         <div className="text-white text-center   ">
           <h1 className=" bold-40 md:bold-60">All Properties </h1>
@@ -62,11 +68,11 @@ const Page = () => {
 
         {isDataEmpty ? (
           <h2 className="text-center bold-32 lg:bold-40 text-secondary-3 italic">
-            Loading... Or No Results{" "}
+            {data === null ? "Loading..." : "No Results"}
           </h2>
         ) : (
           <div className=" 2xl:self-start grid grid-cols-1 md:grid-cols-2  2xl:grid-cols-3   2xl:gap-4 lg:gap-10 mt-12">
-            {data?.map((item  , i : number )    => (
+            {data?.map((item, i: number) => (
               <Suspense key={i} fallback={"loading..."}>
                 <Card
                   country={item.location[1]?.name}
@@ -78,7 +84,6 @@ const Page = () => {
                   rooms={item?.rooms}
                   width={item.area}
                   paying={item.rentFrequency}
-
                 />
               </Suspense>
             ))}

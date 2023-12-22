@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import PriceBox from "./PriceBox";
 
-
 const IconText = ({
   iconSrc,
   iconAlt,
@@ -31,7 +30,7 @@ const Card = ({
   country,
   view,
   price,
-  paying  = "daily" ,  
+  paying = "daily",
 }: CardProps) => {
   const getFirstThreeWords = (title: string) => {
     const words = title.split(" ");
@@ -44,14 +43,14 @@ const Card = ({
     <div className="w-[350px] max-w-[450px] bg-white pb-8 rounded-br-[40px] overflow-hidden">
       <div className="w-full relative">
         <Image
-          src={image || "/top-villas-1.svg" }
+          src={image || "/top-villas-1.svg"}
           alt="card image"
           width={400}
           className="card__image"
           height={356}
           priority
         />
-        <PriceBox price={price} paying = {paying} />
+        <PriceBox price={price} paying={paying} />
       </div>
 
       <div className="px-3">
@@ -60,7 +59,12 @@ const Card = ({
             <span className="font-bold tracking-[1px] capitalize ">
               {country}
             </span>
-            <Image alt="circle" src="/circle.svg" width={10} height={10} />
+            <Image
+              alt="circle"
+              src="/circle.svg"
+              width={10}
+              height={10}
+            />
             <p className="font-normal capitalize ">{view}</p>
           </div>
 
