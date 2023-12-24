@@ -9,7 +9,7 @@ const FAQDisclosure = ({ question, answer }: DicolosureProps) => {
     <Disclosure>
       {({ open }) => (
         <>
-          <Disclosure.Button className="flex gap-4  px-4 py-2 text-lg font-bold text-left text-primary-1 bg-secondary-3 rounded-md focus:outline-none focus-visible:ring  focus-visible:ring-opacity-75">
+          <Disclosure.Button className="flex gap-4 w-full  px-4 py-2 text-lg font-bold text-left text-primary-1 bg-secondary-3 rounded-md focus:outline-none focus-visible:ring  focus-visible:ring-opacity-75">
             <Image
               src={"/plus-primary.svg"}
               alt={"expand"}
@@ -18,7 +18,7 @@ const FAQDisclosure = ({ question, answer }: DicolosureProps) => {
             />
             <span>{question}</span>
           </Disclosure.Button>
-          <Disclosure.Panel className=" w-full px-4 pt-4 pb-2 text-dark regular-18">
+          <Disclosure.Panel className="  px-4 pt-4 pb-2 text-dark regular-18">
             <p>{answer}</p>
           </Disclosure.Panel>
         </>
