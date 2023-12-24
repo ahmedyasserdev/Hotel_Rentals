@@ -153,9 +153,6 @@ export const TYPES = [
   { name: "Penthouses", value: "18" },
   { name: "Hotel Apartments", value: "21" },
   { name: "Villa Compound", value: "19" },
-  { name: "Residential Plot", value: "14" },
-  { name: "Residential Floor", value: "12" },
-  { name: "Residential Building", value: "17" },
 ];
 
 

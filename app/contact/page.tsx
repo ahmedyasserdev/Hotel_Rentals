@@ -9,8 +9,8 @@ const page = () => {
       <div className="container">
         <div className="flex-center flex-col text-dark gap-4 pb-10">
           <h1 className="bold-40 md:bold-60 " >Contact Us</h1>
-          <p className=" regular-18 md:regular-24 text-center md:max-w-[600px] " >We're always here to answer your questions.
-Reach out and we'll get back to you as soon as possible.</p>
+          <p className=" regular-18 md:regular-24 text-center md:max-w-[600px] " >We are always here to answer your questions.
+Reach out and we will get back to you as soon as possible.</p>
         </div>
 
 

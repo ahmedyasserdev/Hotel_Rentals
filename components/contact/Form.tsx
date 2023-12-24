@@ -5,7 +5,7 @@ import Button from "../Button"
 const Form = () => {
   return (
     <section className = "bg-white p-20  rounded-md rounded-tr-[40px] mt-20 " >
-        <h1 className = "flex-start  bold-32 md:bold-52" >We'd love to hear from you</h1>
+        <h1 className = "flex-start  bold-32 md:bold-52" >We would love to hear from you</h1>
 
     <form className = "flex flex-col gap-4 pt-3" 
       onSubmit = {(e) => e.preventDefault() }
