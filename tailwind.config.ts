@@ -25,15 +25,15 @@ const config: Config = {
         glass : "rgba(255, 255, 255, 0.88)",
       },
       backgroundImage: {
-        home_hero_desktop: "url(/hero-desktop.svg)",
+        home_hero_desktop: "url(/hero-desktop.png)",
       
-        home_hero_mobile: "url('/hero-mobile.svg')",
-        home_region_1: "url('/region-1.svg')",
-        home_region_2: "url('/region-2.svg')",
-        vase_desktop: "url(/vase-desktop.svg)",
-        vase_mobile: "url('/vase-mobile.svg')",
-        about_1 : "url('/about-1.svg')",
-        about_1_mobile : "url('/about-1-mobile.svg')",
+        home_hero_mobile: "url('/hero-mobile.png')",
+        home_region_1: "url('/region-1.png')",
+        home_region_2: "url('/region-2.png')",
+        vase_desktop: "url(/vase-desktop.png)",
+        vase_mobile: "url('/vase-mobile.png')",
+        about_1 : "url('/about-1.png')",
+        about_1_mobile : "url('/about-1-mobile.png')",
         luxury_desktop : "url('/luxury-desktop.svg')",
         luxury_mobile : "url('/luxury-mobile.svg')",
 

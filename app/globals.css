@@ -29,11 +29,7 @@ p {
   .btn_light {
     @apply border-[1.4px] border-primary-2 text-primary-1 bg-white rounded-lg rounded-tl-none;
   }
-  /* .btn_dark_green {
-    @apply bg-green-90 px-8 py-4 text-white transition-all hover:bg-black;
-  }
-  .btn_dark_green_outline {
-    @apply border-[1px] border-gray-10 bg-green-90 px-8 py-5 text-white; */
+
 
   .container {
     @apply mx-auto w-[85%];
@@ -143,11 +139,11 @@ p {
   }
 
   .section__padding {
-    @apply py-[70px] lg:py-[150px];
+    @apply py-[100px] lg:py-[150px];
   }
 
   .scale-animation {
-    @apply hover:scale-125 transition-all duration-700;
+    @apply hover:scale-125 transition-all duration-500;
   }
 }
 

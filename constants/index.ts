@@ -9,7 +9,7 @@ export const TOP_VILLAS = [
   {
     id: 1,
     price: 280,
-    image: "/top-villas-1.svg",
+    image: "/top-villas-1.png",
     country: "Italy",
     view: "Mountains",
     title: "Villa Makarska",
@@ -21,7 +21,7 @@ export const TOP_VILLAS = [
   {
     id: 2,
     price: 110,
-    image: "/top-villas-2.svg",
+    image: "/top-villas-2.png",
     country: "greece",
     view: "Seaside",
     title: "Villa Roxane",
@@ -33,7 +33,7 @@ export const TOP_VILLAS = [
   {
     id: 3,
     price: 240,
-    image: "/top-villas-3.svg",
+    image: "/top-villas-3.png",
     country: "greece",
     view: "Seaside",
     title: "Aphrodite",
@@ -80,7 +80,7 @@ export const FOOTER_TEXT = [
 
 export const FOOTER_MOBILE_TEXT = ["termis", "privacy", "contact"];
 
-export const FOOTER_ICONS = [
+export const SOCIAL_ICONS = [
   {
     alt: "facebook",
     icon: "/facebook.svg",
@@ -157,3 +157,69 @@ export const TYPES = [
   { name: "Residential Floor", value: "12" },
   { name: "Residential Building", value: "17" },
 ];
+
+
+export const CONTACT_INFO = [
+  {
+      title  : "Phone",
+      value : "+00 000 000 00",
+  },
+  {
+      title  : "Email",
+      value : "info@luxuryrentals.com",
+  },
+  {
+      title  : "Address",
+      value : "Name of the street 10 000 City of Somewhere,"
+  },
+]
+
+
+
+const answer = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam iste quas inventore! Voluptatem, sequi ullam."
+export const FAQS = [
+  {
+    question:"Where can I find the offer of villa and service prices?",
+    answer ,
+  },
+  {
+    question:"Will I receive a refund of the advance payment or the remaining amount for the Accommodation in case of cancellation?",
+    answer ,
+  },
+  {
+    question:"What is included in the price of Accommodation?",
+    answer ,
+  },
+  {
+    question:"What are the terms of payment by bank transfer and can I pay by credit card?",
+    answer ,
+  },
+  {
+    question:"How do I pay the rest of the Accommodation price, at once or in several installments?",
+    answer ,
+  },
+  {
+    question:"Is it possible to rent the villa outside the Saturday to Saturday period?",
+    answer ,
+  },
+  {
+    question:"What if I am late with paying the advance payment or the remaning amount?",
+    answer ,
+  },
+  {
+    question:"Is a deposit required?",
+    answer ,
+  },
+  {
+    question:"Is it possible to check in before the time period?",
+    answer ,
+  },
+  {
+    question:"How can I cancel the Accommodation after having paid the advance payment or the remaining amount?",
+    answer ,
+  },
+  {
+    question:"Is it cheaper if I book directly through the owner?",
+    answer ,
+  },
+]

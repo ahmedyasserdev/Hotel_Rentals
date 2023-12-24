@@ -74,3 +74,9 @@ export type Amenity = {
 export type AmenitiesSectionProps = {
   amenities: Amenity[];
 };
+
+
+export type DicolosureProps = {
+  question : string ; 
+   answer : string ; 
+}

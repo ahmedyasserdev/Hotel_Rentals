@@ -68,10 +68,10 @@ const Page = () => {
 
         {isDataEmpty ? (
           <h2 className="text-center bold-32 lg:bold-40 text-secondary-3 italic">
-            {data === null ? "Loading..." : "No Results"}
+            {data === null ? "No Results":   "Loading..." }
           </h2>
         ) : (
-          <div className=" 2xl:self-start grid grid-cols-1 md:grid-cols-2  2xl:grid-cols-3   2xl:gap-4 lg:gap-10 mt-12">
+          <div className=" 2xl:self-start grid grid-cols-1 md:grid-cols-2  gap-3  2xl:grid-cols-3  2xl:gap-4 lg:gap-10 mt-12">
             {data?.map((item, i: number) => (
               <Suspense key={i} fallback={"loading..."}>
                 <Card

@@ -41,7 +41,7 @@ const AboutUs = () => {
           <div className="relative about  ">
             <Image
               className="absolute bg-white pr-3 pl-2  pb-2 object-contain  left-[-25px] top-[-20px]    lg:left-[-50px] lg:top-[-40px] z-30 w-[160px] md:w-[250px] "
-              src="/about-2.svg"
+              src="/about-2.png"
               width={300}
               height={300}
               alt="people"

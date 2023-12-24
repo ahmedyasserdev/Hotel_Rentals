@@ -1,5 +1,5 @@
 'use client'
-import { FOOTER_ICONS, FOOTER_MOBILE_TEXT, FOOTER_TEXT } from "@/constants";
+import { SOCIAL_ICONS, FOOTER_MOBILE_TEXT, FOOTER_TEXT } from "@/constants";
 import Image from "next/image";
 import React, { useState } from "react";
 import CustomFilter from "./CustomFilter";
@@ -35,7 +35,7 @@ const Footer = () => {
           <p className="regulary-16">info@luxuryrentals.com</p>
 
           <div className="flex items-center  gap-4 pt-3 ">
-            {FOOTER_ICONS.map(({ alt, icon } , index ) => (
+            {SOCIAL_ICONS.map(({ alt, icon } , index ) => (
               <Image   key = {index} className="cursor-pointer" src={icon} alt={alt} width={26} height={20} />
             ))}
           </div>
