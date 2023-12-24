@@ -19,7 +19,7 @@ Reach out and we will get back to you as soon as possible.</p>
 
       <div className = "mt-10" >
 
-        <div className = "flex-center flex-col gap-4 text-dark " >
+        <div className = "flex-center text-center flex-col gap-4 text-dark " >
           <h1 className = "bold-32 md:bold-52" >Frequently asked questions</h1>
           <p className = "regular-18" >Everything you need to know about the product and billing.</p>
         </div>
