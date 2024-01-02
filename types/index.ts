@@ -36,6 +36,7 @@ export type ButtonProps = {
 export type OptionProps = {
   name: string;
   value?: string;
+  queryName: string;
 };
 
 export type CustomFilterProps = {
