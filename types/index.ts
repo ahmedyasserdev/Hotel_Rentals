@@ -1,6 +1,6 @@
 export type CardProps = {
   id?: number;
-  image?: string; 
+  image?: string;
   guests?: number;
   rooms: number;
   width?: number;
@@ -14,7 +14,7 @@ export type CardProps = {
 export type IconTextProps = {
   iconSrc: string;
   iconAlt: string;
-  value: number ;
+  value: number;
   unit: string;
   pluralUnit: string;
 };
@@ -41,7 +41,6 @@ export type OptionProps = {
 export type CustomFilterProps = {
   title?: string;
   options: OptionProps[];
-  setFilterState: any;
 };
 
 export type ExternalIDType = {
@@ -59,11 +58,11 @@ export type DataProps = {
   type: string;
   purpose: string;
   furnishingStatus: string;
-  amenities: Amenity[]; 
-  photos: { url: string }[]; 
+  amenities: Amenity[];
+  photos: { url: string }[];
   location: { name: string }[];
-  coverPhoto?: { url: string }; 
-  externalID?: number; 
+  coverPhoto?: { url: string };
+  externalID?: number;
 };
 
 export type Amenity = {
@@ -75,8 +74,20 @@ export type AmenitiesSectionProps = {
   amenities: Amenity[];
 };
 
-
 export type DicolosureProps = {
-  question : string ; 
-   answer : string ; 
-}
+  question: string;
+  answer: string;
+};
+
+export type Data = {
+  paying: string;
+  minPrice: number;
+  maxPrice: number;
+  purpose: string;
+  type: number;
+  hitsPerPage?: number;
+};
+
+export type VillaProps = {
+  searchParams: Data;
+};

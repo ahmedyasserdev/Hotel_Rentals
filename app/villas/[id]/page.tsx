@@ -141,4 +141,3 @@ const Page = ({ params: { id } }: ExternalIDType) => {
 };
 
 export default Page;
-
