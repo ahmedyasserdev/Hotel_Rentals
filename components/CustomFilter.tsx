@@ -3,17 +3,21 @@
 import { Fragment, useState } from "react";
 import Image from "next/image";
 import { Listbox, Transition } from "@headlessui/react";
-import { CustomFilterProps } from "@/types";
+import { CustomFilterProps, OptionProps } from "@/types";
 import { updateSearchParams } from "@/utils";
 import { useRouter } from "next/navigation";
 
 export default function CustomFilter({ options }: CustomFilterProps) {
   const [selected, setSelected] = useState(options[0]); // State for storing the selected option
   const router = useRouter();
-  const handleChange = (e: HTMLInputElement) => {
+  const handleChange = (e: OptionProps) => {
     setSelected(e);
 
-    const newPathname = updateSearchParams(selected.queryName, e.value);
+    // Use nullish coalescing to provide a default value for e.value
+    const newPathname = updateSearchParams(
+      selected.queryName ?? "",
+      e.value ?? ""
+    );
     router.push(newPathname);
   };
 
