@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 export default function CustomFilter({ options }: CustomFilterProps) {
   const [selected, setSelected] = useState(options[0]); // State for storing the selected option
   const router = useRouter();
-  const handleChange = (e) => {
+  const handleChange = (e: HTMLInputElement) => {
     setSelected(e);
 
     const newPathname = updateSearchParams(selected.queryName, e.value);
