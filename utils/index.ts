@@ -3,7 +3,7 @@ import { Data, DataProps } from "@/types";
 export const options: RequestInit = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY!,
+    "X-RapidAPI-Key": "1f4ba119cemsh5559af1c0d9d34bp101f18jsn164e0c760b56",
     "X-RapidAPI-Host": "bayut.p.rapidapi.com",
   },
 };
