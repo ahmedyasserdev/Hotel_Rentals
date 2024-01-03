@@ -1,24 +1,33 @@
 "use client";
+import { useEffect, useState } from "react";
 import { fetchData } from "@/utils";
 import CustomFilter from "@/components/CustomFilter";
 import { PORPUSE, PAYING, MIN_PIRCE, MAX_PRICE, TYPES } from "@/constants";
 import Card from "@/components/Card";
 import Button from "@/components/Button";
 import { VillaProps } from "@/types";
-const Page = async ({ searchParams }: VillaProps) => {
+
+const Page = ({ searchParams }: VillaProps) => {
+  const [data, setData] = useState([]);
+  const isDataEmpty = !Array.isArray(data) || data.length < 1 || !data;
   let hitsPerPage = 9;
 
-  const data = await fetchData({
-    purpose: searchParams.purpose || "for-rent",
-    minPrice: searchParams.minPrice || 10000,
-    maxPrice: searchParams.maxPrice || 135000,
-    paying: searchParams.paying || "monthly",
-    type: searchParams.type || 3,
-    hitsPerPage: hitsPerPage || 9,
-  });
+  const fetch = async () => {
+    const result = await fetchData({
+      purpose: searchParams.purpose || "for-rent",
+      minPrice: searchParams.minPrice || 10000,
+      maxPrice: searchParams.maxPrice || 135000,
+      paying: searchParams.paying || "monthly",
+      type: searchParams.type || 3,
+      hitsPerPage: hitsPerPage || 9,
+    });
 
+    setData(result);
+  };
 
-  const isDataEmpty = !Array.isArray(data) || data.length < 1 || !data;
+  useEffect(() => {
+    fetch();
+  }, [searchParams]);
 
   return (
     <section className="section__padding page_bg ">

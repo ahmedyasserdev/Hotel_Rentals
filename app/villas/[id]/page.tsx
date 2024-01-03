@@ -4,91 +4,56 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 
-import { useEffect, useState } from "react";
 import { DataProps, ExternalIDType } from "@/types";
-import { options } from "@/utils";
+import { fetchDetails } from "@/utils";
 import PriceBox from "@/components/PriceBox";
 import AmenitiesSection from "@/components/villa/AmenitiesSection";
+import { useState, useEffect } from "react";
 
 const Page = ({ params: { id } }: ExternalIDType) => {
-  const [data, setData] = useState<DataProps>({
-    price: 0,
-    rentFrequency: "monthly",
-    rooms: 0,
-    title: "",
-    baths: 0,
-    area: 0,
-    description: "",
-    type: "",
-    purpose: "",
-    furnishingStatus: "",
-    amenities: [],
-    photos: [],
-    location: [],
-  });
+  const [data, setData] = useState<DataProps | null>(null);
+  const fetchDataAsync = async () => {
+    const result = await fetchDetails(id);
+    setData(result);
+  };
+  useEffect(() => {
+    fetchDataAsync();
+  }, [id]); // This will re-run the effect whenever id changes
 
-  const {
-    price,
-    rentFrequency,
-    rooms,
-    title,
-    baths,
-    area,
-    description,
-    type,
-    purpose,
-    furnishingStatus,
-    amenities,
-    photos,
-  } = data;
   const propertyData = [
-    { label: "Baths", value: baths },
+    { label: "Baths", value: data.baths },
     {
       label: "Purpose",
       value:
-        purpose && typeof purpose === "string"
-          ? purpose.split("-").join(" ")
+        data.purpose && typeof data.purpose === "string"
+          ? data.purpose.split("-").join(" ")
           : "",
     },
-    { label: "Type", value: type },
+    { label: "Type", value: data.type },
     {
       label: "Area",
       value:
-        area && typeof area === "number" ? area.toFixed(0) + "m2" : area + "m2",
+        data.area && typeof data.area === "number"
+          ? data.area.toFixed(0) + "m2"
+          : data.area + "m2",
     },
-    { label: "Furnishing Status", value: furnishingStatus },
-    { label: "Rooms", value: rooms },
+    { label: "Furnishing Status", value: data.furnishingStatus },
+    { label: "Rooms", value: data.rooms },
   ];
 
-  const fetchDetails = async () => {
-    try {
-      const url = `https://bayut.p.rapidapi.com/properties/detail?externalID=${id}`;
-      const response = await fetch(url, options);
-      const data = await response.json();
-      setData(data);
-      return data;
-    } catch (error) {
-      console.error("Error fetching details:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchDetails();
-  }, [id]);
-
   return (
-    <section className="section__padding page_bg">
+    <section className=" py-[70px] section__padding page_bg">
       <div className="container">
         <div className="flex-between gap-[40px] md:gap-2 flex-col-reverse lg:flex-row">
           <div className="text-dark md:self-start text-center lg:text-start md:w-1/2">
-            <h1 className="bold-32 md:bold-40">{title}</h1>
+            <h1 className="bold-32 md:bold-40">{data.title}</h1>
             <p className="regular-16 md:max-w-[80%] mt-3 leading-[1.6]">
-              {description?.slice(0, 250)}.
+              {data.description?.slice(0, 250)}.
             </p>
           </div>
 
           <div className=" w-screen md:w-1/2 relative rounded-md ">
-            {photos && (
+            {data.photos && (
               <Swiper
                 navigation={true}
                 className="mySwiper"
@@ -96,15 +61,16 @@ const Page = ({ params: { id } }: ExternalIDType) => {
                 slidesPerView={1}
                 modules={[Navigation]}
               >
-                {photos.map((photo, index) => (
+                {data.photos.map((photo, index) => (
                   <SwiperSlide key={index}>
+                    {" "}
                     <img src={photo.url} alt={`Photo ${index + 1}`} />
                   </SwiperSlide>
                 ))}
               </Swiper>
             )}
 
-            <PriceBox price={price} paying={rentFrequency} />
+            <PriceBox price={data.price} paying={data.rentFrequency} />
           </div>
         </div>
 
@@ -132,7 +98,7 @@ const Page = ({ params: { id } }: ExternalIDType) => {
 
         <div className="mt-4">
           <div>
-            <AmenitiesSection amenities={amenities} />
+            <AmenitiesSection amenities={data.amenities} />
           </div>
         </div>
       </div>
