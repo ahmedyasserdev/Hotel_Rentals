@@ -3,9 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { NAV_LINKS } from "@/constants";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="z-[999999]  absolute top-0 left-0 w-full bg-navBg">
@@ -33,7 +35,10 @@ const Navbar = () => {
               href={link.href}
               key={link.label}
               onClick={() => setIsOpen(false)}
-              className=" regular-20  hover:text-secondary-2 lg:regular-24  uppercase  flex-center cursor-pointer pb-1.5   transition-all  tracking-[1px] "
+              className={` regular-20  hover:text-secondary-2 lg:regular-24  uppercase  flex-center cursor-pointer pb-1.5   transition-all  tracking-[1px] 
+              
+                ${pathname === link.href && "font-bold text-secondary-2"}
+              `}
             >
               {link.label}
             </Link>
