@@ -5,7 +5,7 @@ import CustomFilter from "@/components/CustomFilter";
 import { PORPUSE, PAYING, MIN_PIRCE, MAX_PRICE, TYPES } from "@/constants";
 import Card from "@/components/Card";
 import Button from "@/components/Button";
-import { VillaProps } from "@/types";
+import { DataProps, VillaProps } from "@/types";
 
 const Page = ({ searchParams }: VillaProps) => {
   const [data, setData] = useState([]);
@@ -55,7 +55,7 @@ const Page = ({ searchParams }: VillaProps) => {
           </h2>
         ) : (
           <div className=" 2xl:self-start grid grid-cols-1 md:grid-cols-2  gap-3  2xl:grid-cols-3  2xl:gap-4 lg:gap-10 mt-12">
-            {data?.map((item, i: number) => (
+            {data?.map((item: DataProps, i: number) => (
               <Card
                 key={i}
                 country={item.location[1]?.name}

@@ -11,6 +11,7 @@ export type CardProps = {
   price: number;
   paying?: string;
 };
+
 export type IconTextProps = {
   iconSrc: string;
   iconAlt: string;
@@ -61,7 +62,7 @@ export type DataProps = {
   furnishingStatus: string;
   amenities: Amenity[];
   photos: { url: string }[];
-  location?: { name: string }[];
+  location?: any;
   coverPhoto?: { url: string };
   externalID?: number;
 };
