@@ -10,8 +10,24 @@ import PriceBox from "@/components/PriceBox";
 import AmenitiesSection from "@/components/villa/AmenitiesSection";
 import { useState, useEffect } from "react";
 
+const initialDataState = {
+  title: "",
+  description: "",
+  baths: 0,
+  purpose: "",
+  type: "",
+  area: 0,
+  furnishingStatus: "",
+  rooms: 0,
+  photos: [], // Provide an empty array as the default value
+  price: 0,
+  rentFrequency: "",
+  amenities: [],
+  // Add other properties as needed with their default values
+};
+
 const Page = ({ params: { id } }: ExternalIDType) => {
-  const [data, setData] = useState<DataProps | null>(null);
+  const [data, setData] = useState<DataProps>(initialDataState);
   const fetchDataAsync = async () => {
     const result = await fetchDetails(id);
     setData(result);

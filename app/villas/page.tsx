@@ -71,16 +71,6 @@ const Page = ({ searchParams }: VillaProps) => {
             ))}
           </div>
         )}
-
-        {!isDataEmpty && data.length >= hitsPerPage && (
-          <Button
-            variant="btn_primary p-2 bold-18"
-            icon={"/plus.svg"}
-            type={"button"}
-            title={"Show More"}
-            handlClick={() => hitsPerPage + 9}
-          />
-        )}
       </div>
     </section>
   );
