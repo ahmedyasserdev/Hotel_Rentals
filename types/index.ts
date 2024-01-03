@@ -61,7 +61,7 @@ export type DataProps = {
   furnishingStatus: string;
   amenities: Amenity[];
   photos: { url: string }[];
-  location: { name: string }[];
+  location?: { name: string }[];
   coverPhoto?: { url: string };
   externalID?: number;
 };
