@@ -14,10 +14,7 @@ export default function CustomFilter({ options }: CustomFilterProps) {
     setSelected(e);
 
     // Use nullish coalescing to provide a default value for e.value
-    const newPathname = updateSearchParams(
-      selected.queryName ?? "",
-      e.value ?? ""
-    );
+    const newPathname = updateSearchParams(selected.queryName!, e?.value!);
     router.push(newPathname);
   };
 
