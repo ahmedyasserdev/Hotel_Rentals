@@ -3,7 +3,7 @@ import { Data, DataProps } from "@/types";
 export const options: RequestInit = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": "1f4ba119cemsh5559af1c0d9d34bp101f18jsn164e0c760b56",
+    "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY!,
     "X-RapidAPI-Host": "bayut.p.rapidapi.com",
   },
 };
@@ -20,6 +20,10 @@ export const fetchData = async ({
     const url = `https://bayut.p.rapidapi.com/properties/list?locationExternalIDs=5002%2C6020&purpose=${purpose}&hitsPerPage=${hitsPerPage}&lang=en&rentFrequency=${paying}&priceMin=${minPrice}&priceMax=${maxPrice}&categoryExternalID=${type}`;
 
     const response = await fetch(url, options);
+
+    if (!response.ok) {
+      throw new Error(`failed to fetch data ${response.status}`);
+    }
 
     const data = await response.json();
     return data?.hits;

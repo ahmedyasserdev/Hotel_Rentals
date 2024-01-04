@@ -58,7 +58,7 @@ const Page = ({ params: { id } }: ExternalIDType) => {
   ];
 
   return (
-    <section className=" py-[70px] section__padding page_bg">
+    <section className=" max-md:py-[70px] section__padding page_bg">
       <div className="container">
         <div className="flex-between gap-[40px] md:gap-2 flex-col-reverse lg:flex-row">
           <div className="text-dark md:self-start text-center lg:text-start md:w-1/2">
