@@ -1,5 +1,4 @@
 "use client";
-import { useEffect, useState } from "react";
 import { fetchData } from "@/utils";
 import CustomFilter from "@/components/CustomFilter";
 import { PORPUSE, PAYING, MIN_PIRCE, MAX_PRICE, TYPES } from "@/constants";
@@ -7,27 +6,18 @@ import Card from "@/components/Card";
 import Button from "@/components/Button";
 import { DataProps, VillaProps } from "@/types";
 
-const Page = ({ searchParams }: VillaProps) => {
-  const [data, setData] = useState([]);
+const Page = async ({ searchParams }: VillaProps) => {
+  const hitsPerPage = 9;
+
+  const data = await fetchData({
+    purpose: searchParams.purpose || "for-rent",
+    minPrice: searchParams.minPrice || 10000,
+    maxPrice: searchParams.maxPrice || 135000,
+    paying: searchParams.paying || "monthly",
+    type: searchParams.type || 3,
+    hitsPerPage: hitsPerPage || 9,
+  });
   const isDataEmpty = !Array.isArray(data) || data.length < 1 || !data;
-  const [hitsPerPage, setHitsPerPage] = useState(9);
-
-  const fetch = async () => {
-    const result = await fetchData({
-      purpose: searchParams.purpose || "for-rent",
-      minPrice: searchParams.minPrice || 10000,
-      maxPrice: searchParams.maxPrice || 135000,
-      paying: searchParams.paying || "monthly",
-      type: searchParams.type || 3,
-      hitsPerPage: hitsPerPage || 9,
-    });
-
-    setData(result);
-  };
-
-  useEffect(() => {
-    fetch();
-  }, [searchParams, hitsPerPage, data]);
 
   return (
     <section className="section__padding page_bg ">
@@ -72,17 +62,17 @@ const Page = ({ searchParams }: VillaProps) => {
           </div>
         )}
 
-        {!isDataEmpty && data.length >= hitsPerPage && (
+        {/* {!isDataEmpty && data.length >= hitsPerPage && (
           <Button
             variant="btn_primary p-2 bold-18"
             icon={"/plus.svg"}
             type={"button"}
             title={"Show More"}
             handlClick={() =>
-              setHitsPerPage((prevHitsPerPage) => prevHitsPerPage + 9)
+              ((prevHitsPerPage) => prevHitsPerPage + 9)
             }
           />
-        )}
+        )} */}
       </div>
     </section>
   );
