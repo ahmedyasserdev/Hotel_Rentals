@@ -12,19 +12,20 @@ const Page = ({ searchParams }: VillaProps) => {
   const isDataEmpty = !Array.isArray(data) || data.length < 1 || !data;
   const [hitsPerPage, setHitsPerPage] = useState(9);
 
-  useEffect(() => {
-    const fetch = async () => {
-      const result = await fetchData({
-        purpose: searchParams.purpose || "for-rent",
-        minPrice: searchParams.minPrice || 10000,
-        maxPrice: searchParams.maxPrice || 135000,
-        paying: searchParams.paying || "monthly",
-        type: searchParams.type || 3,
-        hitsPerPage: hitsPerPage || 9,
-      });
+  const fetch = async () => {
+    const result = await fetchData({
+      purpose: searchParams.purpose || "for-rent",
+      minPrice: searchParams.minPrice || 10000,
+      maxPrice: searchParams.maxPrice || 135000,
+      paying: searchParams.paying || "monthly",
+      type: searchParams.type || 3,
+      hitsPerPage: hitsPerPage || 9,
+    });
 
-      setData(result);
-    };
+    setData(result);
+  };
+
+  useEffect(() => {
     fetch();
   }, [searchParams, hitsPerPage]);
 
