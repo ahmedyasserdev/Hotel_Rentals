@@ -27,7 +27,7 @@ const Page = ({ searchParams }: VillaProps) => {
 
   useEffect(() => {
     fetch();
-  }, [searchParams, hitsPerPage]);
+  }, [searchParams, hitsPerPage, data]);
 
   return (
     <section className="section__padding page_bg ">
