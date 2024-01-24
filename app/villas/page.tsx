@@ -1,21 +1,19 @@
-"use client";
 import { fetchData } from "@/utils";
 import CustomFilter from "@/components/CustomFilter";
 import { PORPUSE, PAYING, MIN_PIRCE, MAX_PRICE, TYPES } from "@/constants";
 import Card from "@/components/Card";
 import Button from "@/components/Button";
 import { DataProps, VillaProps } from "@/types";
+import ShowMore from "@/components/ShowMore";
 
 const Page = async ({ searchParams }: VillaProps) => {
-  const hitsPerPage = 9;
-
   const data = await fetchData({
     purpose: searchParams.purpose || "for-rent",
     minPrice: searchParams.minPrice || 10000,
     maxPrice: searchParams.maxPrice || 135000,
     paying: searchParams.paying || "monthly",
     type: searchParams.type || 3,
-    hitsPerPage: hitsPerPage || 9,
+    hitsPerPage: searchParams.hitsPerPage || 9,
   });
   const isDataEmpty = !Array.isArray(data) || data.length < 1 || !data;
 
@@ -62,17 +60,10 @@ const Page = async ({ searchParams }: VillaProps) => {
           </div>
         )}
 
-        {/* {!isDataEmpty && data.length >= hitsPerPage && (
-          <Button
-            variant="btn_primary p-2 bold-18"
-            icon={"/plus.svg"}
-            type={"button"}
-            title={"Show More"}
-            handlClick={() =>
-              ((prevHitsPerPage) => prevHitsPerPage + 9)
-            }
-          />
-        )} */}
+        <ShowMore
+          pageNumber={(searchParams.hitsPerPage || 9) / 9}
+          isNext={(searchParams.hitsPerPage || 9) > data.length}
+        />
       </div>
     </section>
   );

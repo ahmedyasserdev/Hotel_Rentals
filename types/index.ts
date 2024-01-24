@@ -93,3 +93,9 @@ export type Data = {
 export type VillaProps = {
   searchParams: Data;
 };
+
+
+export type  ShowMoreProps =  {
+  pageNumber: number;
+  isNext: boolean;
+}
