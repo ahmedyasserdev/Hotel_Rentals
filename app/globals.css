@@ -292,3 +292,27 @@ p {
 .swiper-slide:active {
   cursor: grabbing;
 }
+
+
+/* date picker */
+
+.datePicker {
+  width: 100%;
+}
+
+.react-datepicker__input-container input {
+  background-color: transparent;
+  width: 100%;
+  outline: none;
+  margin-left: 16px;
+}
+
+.react-datepicker__day--selected {
+  background-color: #5B656F !important;
+  color: #ffffff !important;
+  border-radius: 4px;
+}
+
+.react-datepicker__time-list-item--selected {
+  background-color: #5B656F !important;
+}

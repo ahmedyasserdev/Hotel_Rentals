@@ -99,3 +99,9 @@ export type  ShowMoreProps =  {
   pageNumber: number;
   isNext: boolean;
 }
+
+export type PickerProps = {
+  date : Date ;
+  setDate : (date : Date) => void ;
+  label : string ;
+}

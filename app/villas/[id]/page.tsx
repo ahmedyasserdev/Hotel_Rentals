@@ -9,6 +9,8 @@ import { fetchDetails } from "@/utils";
 import PriceBox from "@/components/PriceBox";
 import AmenitiesSection from "@/components/villa/AmenitiesSection";
 import { useState, useEffect } from "react";
+import Picker from "@/components/DatePicker";
+import Button from "@/components/Button";
 
 const initialDataState = {
   title: "",
@@ -19,22 +21,23 @@ const initialDataState = {
   area: 0,
   furnishingStatus: "",
   rooms: 0,
-  photos: [], // Provide an empty array as the default value
+  photos: [],
   price: 0,
   rentFrequency: "",
   amenities: [],
-  // Add other properties as needed with their default values
 };
 
 const Page = ({ params: { id } }: ExternalIDType) => {
   const [data, setData] = useState<DataProps>(initialDataState);
+  const [checkInDate, setcheckInDate] = useState(new Date());
+  const [checkOutDate, setcheckOutDate] = useState(new Date());
   const fetchDataAsync = async () => {
     const result = await fetchDetails(id);
     setData(result);
   };
   useEffect(() => {
     fetchDataAsync();
-  }, [id]); // This will re-run the effect whenever id changes
+  }, [id]);
 
   const propertyData = [
     { label: "Baths", value: data.baths },
@@ -90,17 +93,6 @@ const Page = ({ params: { id } }: ExternalIDType) => {
           </div>
         </div>
 
-        <article className="mt-4 mb-10 flex-center lg:flex-start gap-4 text-dark">
-          <div>
-            <h2 className="bold-20">Check in</h2>
-            <p className="regular-18">From 04:00</p>
-          </div>
-          <div>
-            <h2 className="bold-20">Check out</h2>
-            <p className="regular-18">Until 11:00</p>
-          </div>
-        </article>
-
         <div className="flex items-center lg:items-start flex-col gap-2">
           {propertyData.map((property, index) => (
             <p key={index} className="bold-18">
@@ -112,9 +104,32 @@ const Page = ({ params: { id } }: ExternalIDType) => {
           ))}
         </div>
 
-        <div className="mt-4">
+        <div className=" flex-between  items-start flex-col  md:flex-row gap-10 mt-4">
           <div>
             <AmenitiesSection amenities={data.amenities} />
+          </div>
+
+          <div className="flex flex-col gap-10 max-w-[50%] ">
+            <Button
+              title="Book"
+              type="button"
+              variant="btn_primary bold-36 w-full   "
+            />
+
+            <div className="flex flex-row gap-4">
+              {/* date picker */}
+
+              <Picker
+                date={checkInDate}
+                setDate={setcheckInDate}
+                label="Check in date"
+              />
+              <Picker
+                date={checkOutDate}
+                setDate={setcheckOutDate}
+                label="Check out date"
+              />
+            </div>
           </div>
         </div>
       </div>
