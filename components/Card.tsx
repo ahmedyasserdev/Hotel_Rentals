@@ -40,7 +40,7 @@ const Card = ({
   const processedTitle = getFirstThreeWords(title);
 
   const cardContent = (
-    <div className="w-[350px] max-w-[450px] bg-white pb-8 rounded-br-[40px] overflow-hidden">
+    <div className="  w-[350px] max-w-[450px] bg-white pb-8 rounded-br-[40px] overflow-hidden">
       <div className="w-full relative">
         <Image
           src={image || "/top-villas-1.svg"}

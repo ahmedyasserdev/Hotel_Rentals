@@ -11,6 +11,7 @@ import AmenitiesSection from "@/components/villa/AmenitiesSection";
 import { useState, useEffect } from "react";
 import Picker from "@/components/DatePicker";
 import Button from "@/components/Button";
+import PropertyData from "@/components/villa/PropertyData";
 
 const initialDataState = {
   title: "",
@@ -64,9 +65,9 @@ const Page = ({ params: { id } }: ExternalIDType) => {
     <section className=" max-md:py-[70px] section__padding page_bg">
       <div className="container">
         <div className="flex-between gap-[40px] md:gap-2 flex-col-reverse lg:flex-row">
-          <div className="text-dark md:self-start text-center lg:text-start md:w-1/2">
+          <div className="text-dark lg:self-start text-center lg:text-start lg:w-1/2">
             <h1 className="bold-32 md:bold-40">{data.title}</h1>
-            <p className="regular-16 md:max-w-[80%] mt-3 leading-[1.6]">
+            <p className="regular-16   mx-auto md:max-w-[80%] mt-3 leading-[1.6]">
               {data.description?.slice(0, 250)}.
             </p>
           </div>
@@ -95,28 +96,23 @@ const Page = ({ params: { id } }: ExternalIDType) => {
 
         <div className="flex items-center lg:items-start flex-col gap-2">
           {propertyData.map((property, index) => (
-            <p key={index} className="bold-18">
-              {property.label} :{" "}
-              <span className="regular-16 ml-2 capitalize">
-                {property.value}
-              </span>
-            </p>
+            <PropertyData key = {index} property = {property}  />
           ))}
         </div>
 
-        <div className=" flex-between  items-start flex-col  md:flex-row gap-10 mt-4">
+        <div className=" flex-between  items-start flex-col  lg:flex-row gap-10 mt-4">
           <div>
             <AmenitiesSection amenities={data.amenities} />
           </div>
 
-          <div className="flex flex-col gap-10 max-w-[50%] ">
+          <div className="flex  flex-col gap-10 w-full lg:max-w-[50%] overflow-x-visible ">
             <Button
               title="Book"
               type="button"
-              variant="btn_primary bold-36 w-full   "
+              variant="btn_primary bold-36 w-full grid  "
             />
 
-            <div className="flex flex-row gap-4">
+            <div className="flex-between  flex-row gap-4">
               {/* date picker */}
 
               <Picker

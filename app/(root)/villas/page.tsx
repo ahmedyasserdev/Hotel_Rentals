@@ -2,7 +2,6 @@ import { fetchData } from "@/utils";
 import CustomFilter from "@/components/CustomFilter";
 import { PORPUSE, PAYING, MIN_PIRCE, MAX_PRICE, TYPES } from "@/constants";
 import Card from "@/components/Card";
-import Button from "@/components/Button";
 import { DataProps, VillaProps } from "@/types";
 import ShowMore from "@/components/ShowMore";
 
@@ -19,7 +18,7 @@ const Page = async ({ searchParams }: VillaProps) => {
 
   return (
     <section className="section__padding page_bg ">
-      <div className="container flex-center   flex-col gap-4 relative z-30 mt-5">
+      <div className="container flex  flex-col gap-4 relative z-30 mt-5">
         <div className="text-white text-center   ">
           <h1 className=" bold-40 md:bold-60">All Properties </h1>
           {Array.isArray(data) && data.length > 1 && (
@@ -42,7 +41,7 @@ const Page = async ({ searchParams }: VillaProps) => {
             {data === null ? "No Results" : "Loading..."}
           </h2>
         ) : (
-          <div className=" 2xl:self-start grid grid-cols-1 md:grid-cols-2  gap-3  2xl:grid-cols-3  2xl:gap-4 lg:gap-10 mt-12">
+          <div className=" 2xl:self-start  gap-3  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  2xl:grid-cols-4  2xl:gap-4 lg:gap-10 mt-12">
             {data?.map((item: DataProps, i: number) => (
               <Card
                 key={i}

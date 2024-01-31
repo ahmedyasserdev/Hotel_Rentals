@@ -105,3 +105,13 @@ export type PickerProps = {
   setDate : (date : Date) => void ;
   label : string ;
 }
+
+
+export type createOrUpdateUserParams = {
+  id: string;
+  first_name: string;
+  last_name: string;
+  image_url: string;
+  email_addresses: any;
+  username: string  | null ;
+};
